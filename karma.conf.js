@@ -1,19 +1,19 @@
 const webpackConfig = require('./webpack.config.js');
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     basePath: '',
     frameworks: ['jquery-3.2.1', 'jasmine'],
     files: [
       'src/*.js',
-      'spec/*spec.js'
+      'spec/*spec.js',
     ],
     webpack: webpackConfig,
     exclude: [
     ],
     preprocessors: {
       'src/*.js': ['webpack', 'sourcemap'],
-      'spec/*spec.js': ['webpack', 'sourcemap']
+      'spec/*spec.js': ['webpack', 'sourcemap'],
     },
     plugins: [
       'karma-jquery',
@@ -21,7 +21,7 @@ module.exports = function(config) {
       'karma-jasmine',
       'karma-chrome-launcher',
       'karma-jasmine-html-reporter',
-      'karma-sourcemap-loader'
+      'karma-sourcemap-loader',
     ],
     reporters: ['progress', 'kjhtml'],
     port: 9876,
@@ -30,6 +30,6 @@ module.exports = function(config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    concurrency: Infinity
-  })
-}
+    concurrency: Infinity,
+  });
+};
